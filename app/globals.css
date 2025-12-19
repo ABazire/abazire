@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fdfce7;
   --foreground: #171717;
+  --primary: #0e4839;
+  --text: #07221c;
 }
 
 @theme inline {
@@ -19,8 +21,246 @@
   }
 }
 
+* {
+  color: var(--text);
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding-block: 75px;
+}
+
+#grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+header div {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+header h2 {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 160px;
+  font-family: "Inter", sans-serif;
+}
+
+header h1 {
+  font-size: 44px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+header h1 span {
+  background-color: var(--primary);
+  color: var(--background);
+  padding: 5px 10px;
+  transform: rotate(-50deg);
+}
+
+header nav {
+  position: absolute;
+  top: 25px;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+header nav div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.theme {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 15px;
+}
+
+.theme span {
+  width: 30px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+.green {
+  background-color: #0e4839;
+}
+.blue {
+  background-color: #1e3a8a;
+}
+.orange {
+  background-color: #c2410c;
+}
+.purple {
+  background-color: #6b21a8;
+}
+
+/* Tools Component */
+.tools-container {
+  overflow: hidden;
+  background-color: var(--primary);
+  padding-block: 50px;
+}
+
+.carousel {
+  display: flex;
+  width: max-content;
+
+  gap: 200px;
+
+  animation: scroll 20s linear infinite;
+  will-change: transform;
+}
+
+.carousel img {
+  width: 75px;
+  height: 75px;
+  flex-shrink: 0;
+  filter: grayscale(1);
+}
+
+.carousel img:hover {
+  filter: grayscale(0);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 100px));
+  }
+}
+
+/* Services Component */
+.container h2 {
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.service h3 {
+  font-size: 70px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.service h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.service {
+  padding-block: 25px 50px;
+  border-bottom: 1px solid var(--foreground);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.service-project {
+  position: absolute;
+  background-color: var(--foreground);
+  height: auto;
+  width: 700px;
+  right: 15%;
+  border-radius: 5px;
+  display: none;
+  padding: 25px;
+}
+
+.service:hover .service-project {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.service-project h3 {
+  color: var(--background);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.service-project p,
+.service-project span {
+  color: var(--background);
+  line-height: 1.6;
+  opacity: 0.6;
+}
+
+.service-project-desc {
+  width: auto;
+}
+
+.service-project span {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.service-project div {
+  background-color: var(--background);
+  height: 250px;
+  border-radius: 5px;
+}
+
+.service-project img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.service-project a {
+  background-color: var(--background);
+  color: var(--foreground);
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Footer Component */
+footer {
+  background-color: var(--primary);
+  border-radius: 25px 25px 0 0;
+  padding-inline: 25px;
+}
+
+footer p {
+  color: var(--background);
 }

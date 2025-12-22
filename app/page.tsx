@@ -1,21 +1,13 @@
-import Image from "next/image";
-import Logo from "../public/img/Logo.png";
-import { Moon } from "@deemlol/next-icons";
 import Tools from "@/components/tools";
 import Services from "@/components/services";
+import Menu from "@/components/menu";
 import Footer from "@/components/footer";
 
 export default function Home() {
   return (
     <>
       <header>
-        <nav>
-          <img src={Logo.src} alt="Logo Abazire" width={75} height={75} />
-          <div>
-            <p>EN</p>
-            <Moon size={24} color="var(--primary)" />
-          </div>
-        </nav>
+        <Menu />
         <div>
           <h2>ABAZIRE</h2>
           <h1>

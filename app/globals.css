@@ -306,3 +306,18 @@ footer p {
 .project-details p {
   color: var(--text);
 }
+
+/* About Page */
+.about-container {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 75px;
+}
+
+.resumle-section {
+  color: var(--background);
+}
+
+.icons {
+  color: var(--background);
+}

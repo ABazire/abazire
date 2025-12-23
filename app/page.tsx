@@ -23,7 +23,7 @@ export default function Home() {
       </header>
       <Tools />
       <Services />
-      <Footer />
+      <Footer variant="detailed" />
     </>
   );
 }

@@ -5,6 +5,7 @@ import GrainEffect from "@/components/GrainEffect";
 import { projects } from "@/data/projects";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Footer from "@/components/footer";
 
 export default function ProductPage() {
   const router = useRouter();
@@ -59,6 +60,7 @@ export default function ProductPage() {
           <p>{project.description}</p>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

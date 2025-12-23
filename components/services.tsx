@@ -9,9 +9,9 @@ function services() {
       description:
         "Création de sites web responsives et performants en utilisant les dernières technologies front-end telles que React, Next.js et Tailwind CSS.",
       project: {
-        title: "Agrimap",
-        slug: "agrimap",
-        img: "/img/Projets/developpement.png",
+        title: "Portfolio",
+        slug: "portfolio",
+        img: "/img/Projets/portfolio.png",
         description:
           "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci expedita perspiciatis pariatur.",
       },

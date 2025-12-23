@@ -30,7 +30,7 @@ export const projects: Project[] = [
     description:
       "Application web de cartographie agricole offrant des fonctionnalités avancées pour les agriculteurs.",
     technologies: ["Figma", "Html", "Css", "Javascript", "Symfony"],
-    img: "/img/Projets/Developpement.png",
+    img: "/img/Projets/developpement.png",
   },
   {
     id: 3,
@@ -42,5 +42,16 @@ export const projects: Project[] = [
       "Projet de modélisation 3D pour la visualisation de produits et d'environnements virtuels.",
     technologies: ["Blender"],
     img: "/img/Projets/3D.png",
+  },
+  {
+    id: 4,
+    title: "Portfolio",
+    slug: "portfolio",
+    category: ["Développement web", "Design UI/UX"],
+    year: 2025,
+    description:
+      "Portfolio personnel pour présenter mes projets et compétences.",
+    technologies: ["React", "Typescript", "Vercel"],
+    img: "/img/Projets/portfolio.png",
   },
 ];

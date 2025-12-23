@@ -30,7 +30,7 @@ export const projects: Project[] = [
     description:
       "Application web de cartographie agricole offrant des fonctionnalités avancées pour les agriculteurs.",
     technologies: ["Figma", "Html", "Css", "Javascript", "Symfony"],
-    img: "/img/Projets/developpement.png",
+    img: "/img/Projets/Developpement.png",
   },
   {
     id: 3,

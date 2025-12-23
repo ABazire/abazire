@@ -29,7 +29,7 @@ export const projects: Project[] = [
     year: 2023,
     description:
       "Application web de cartographie agricole offrant des fonctionnalités avancées pour les agriculteurs.",
-    technologies: ["Photoshop"],
+    technologies: ["Figma", "Html", "Css", "Javascript", "Symfony"],
     img: "/img/Projets/developpement.png",
   },
   {

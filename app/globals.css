@@ -256,6 +256,90 @@ header h1 span,
   font-weight: 500;
 }
 
+/* About */
+.about-container {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.resume-section {
+  color: var(--background);
+}
+
+.icons {
+  color: var(--background);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: first;
+  gap: 15px;
+}
+
+.profile span {
+  font-weight: 600;
+  color: var(--background);
+  font-size: 48px;
+}
+
+.profile p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-container path,
+.about-container rect {
+  color: var(--background);
+  border-color: var(--background);
+}
+
+.resume {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.resume-section div span {
+  font-weight: 600;
+  color: var(--background);
+  font-size: 20px;
+}
+
+.resume-section:first-child span {
+  font-size: 26px;
+  color: var(--background);
+  font-weight: 600;
+}
+
+.resume-section p {
+  opacity: 0.8;
+}
+
+.resume-section {
+  display: flex;
+  gap: 10px;
+}
+
+.resume button {
+  width: 200px;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--background);
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
 /* Footer Component */
 footer {
   background-color: var(--primary);
@@ -265,6 +349,10 @@ footer {
 
 footer p {
   color: var(--background);
+}
+
+.copyright p {
+  text-align: center;
 }
 
 /* Project Page */
@@ -305,19 +393,4 @@ footer p {
 
 .project-details p {
   color: var(--text);
-}
-
-/* About Page */
-.about-container {
-  display: flex;
-  gap: 50px;
-  margin-bottom: 75px;
-}
-
-.resumle-section {
-  color: var(--background);
-}
-
-.icons {
-  color: var(--background);
 }

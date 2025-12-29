@@ -21,8 +21,8 @@ export default function GrainEffect() {
           animate: true,
           patternWidth: 100,
           patternHeight: 100,
-          grainOpacity: 0.1,
-          grainDensity: 1.8,
+          grainOpacity: 0.3,
+          grainDensity: 2,
           grainWidth: 1,
           grainHeight: 1,
         };

@@ -1,13 +1,22 @@
 import React from "react";
 import { GraduationCap, Briefcase, MapPin } from "lucide-react";
-import Logo from "../public/img/Logo blanc.png";
+import Logo from "../../public/img/Logo blanc.png";
 import Image from "next/image";
+import { getScopedI18n } from "@/locales/server";
 
-function footer({ variant = "simple" }: { variant?: "simple" | "detailed" }) {
+export default async function Footer({
+  variant = "simple",
+}: {
+  variant?: "simple" | "detailed";
+}) {
+  const footert = await getScopedI18n("footer");
+  const experiencet = await getScopedI18n("footer.experience");
+  const formationt = await getScopedI18n("footer.formation");
+
   return (
     <>
       <footer className="container">
-        {variant === "simple" && <p>© 2024 Abazire. All rights reserved.</p>}
+        {variant === "simple" && <p>{footert("copyright")}</p>}
         {variant === "detailed" && (
           <>
             <div className="about-container">
@@ -56,13 +65,8 @@ function footer({ variant = "simple" }: { variant?: "simple" | "detailed" }) {
               <div className="resume">
                 <div className="resume-section">
                   <div>
-                    <span>A propos</span>
-                    <p>
-                      Passionné par la création d'expériences digitales à la
-                      fois esthétiques et performantes, je combine mes
-                      compétences en développement front-end et en design UX/UI
-                      pour donner vie à des projets web innovants. Expérience
-                    </p>
+                    <span>{footert("aboutTitle")}</span>
+                    <p>{footert("about")}</p>
                   </div>
                 </div>
                 <div className="resume-section">
@@ -71,8 +75,8 @@ function footer({ variant = "simple" }: { variant?: "simple" | "detailed" }) {
                     <Briefcase className="icons" />
                   </div>
                   <div>
-                    <span>Expérience</span>
-                    <p>3 ans en développement web et design UX/UI</p>
+                    <span>{experiencet("title")}</span>
+                    <p>{experiencet("description")}</p>
                   </div>
                 </div>
                 <div className="resume-section">
@@ -81,15 +85,15 @@ function footer({ variant = "simple" }: { variant?: "simple" | "detailed" }) {
                     <GraduationCap className="icons" />
                   </div>
                   <div>
-                    <span>Formation</span>
-                    <p>Master en design UX/UI</p>
+                    <span>{formationt("title")}</span>
+                    <p>{formationt("description")}</p>
                   </div>
                 </div>
-                <button>Télécharger mon CV</button>
+                <button>{footert("button")}</button>
               </div>
             </div>
             <div className="copyright">
-              <p>© 2024 Abazire. All rights reserved.</p>
+              <p>{footert("copyright")}</p>
             </div>
           </>
         )}
@@ -97,7 +101,3 @@ function footer({ variant = "simple" }: { variant?: "simple" | "detailed" }) {
     </>
   );
 }
-
-footer.propTypes = {};
-
-export default footer;

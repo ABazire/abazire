@@ -1,4 +1,4 @@
-import Logo from "../public/img/Logo.png";
+import Logo from "../../public/img/Logo.png";
 import { Moon } from "@deemlol/next-icons";
 
 function Menu() {

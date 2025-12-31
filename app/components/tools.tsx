@@ -1,4 +1,4 @@
-import "../app/globals.css";
+import "../[locale]/globals.css";
 
 function tools() {
   const toolImages = [

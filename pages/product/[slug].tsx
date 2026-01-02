@@ -1,11 +1,11 @@
 import "../../app/globals.css";
 import Image from "next/image";
-import Menu from "@/components/menu";
-import GrainEffect from "@/components/GrainEffect";
+import Menu from "@/app/components/menu";
+import GrainEffect from "@/app/components/GrainEffect";
 import { projects } from "@/data/projects";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import Footer from "@/components/footer";
+import Footer from "@/app/components/footer";
 
 export default function ProductPage() {
   const router = useRouter();

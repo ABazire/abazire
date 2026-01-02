@@ -394,3 +394,85 @@ footer p {
 .project-details p {
   color: var(--text);
 }
+
+/* Style pour le select de langue */
+.locale-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Dimensions et espacement */
+  padding: 8px 32px 8px 12px;
+  min-width: 70px;
+
+  /* Typographie */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a4d3e;
+
+  /* Bordure et fond */
+  background-color: transparent;
+  border: 2px solid #1a4d3e;
+  border-radius: 8px;
+
+  /* Icône de flèche personnalisée */
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%231a4d3e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+
+  /* Curseur et transition */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* Hover */
+.locale-select:hover {
+  background-color: rgba(26, 77, 62, 0.05);
+  border-color: #2a6d5e;
+  transform: translateY(-1px);
+}
+
+/* Focus */
+.locale-select:focus {
+  border-color: #1a4d3e;
+  box-shadow: 0 0 0 3px rgba(26, 77, 62, 0.1);
+}
+
+/* Active */
+.locale-select:active {
+  transform: translateY(0);
+}
+
+/* Options du dropdown */
+.locale-select option {
+  padding: 8px;
+  background-color: var(--background);
+  color: #1a4d3e;
+  border: none;
+  font-weight: 500;
+}
+
+/* Version alternative avec fond sombre pour le mode dark */
+/* @media (prefers-color-scheme: dark) {
+  .locale-select {
+    color: #f5f3eb;
+    border-color: #f5f3eb;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23f5f3eb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  .locale-select:hover {
+    background-color: rgba(245, 243, 235, 0.1);
+  }
+
+  .locale-select:focus {
+    border-color: #f5f3eb;
+    box-shadow: 0 0 0 3px rgba(245, 243, 235, 0.1);
+  }
+
+  .locale-select option {
+    background-color: #1a4d3e;
+    color: #f5f3eb;
+  }
+} */

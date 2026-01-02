@@ -1,7 +1,8 @@
+import { getI18n } from "@/locales/server";
 import { s } from "framer-motion/client";
 import Link from "next/link";
 
-function services() {
+export default async function Services() {
   const services = [
     {
       id: 1,
@@ -58,10 +59,12 @@ function services() {
     },
   ];
 
+  const t = await getI18n();
+
   return (
     <>
       <section className="container">
-        <h2>Services</h2>
+        <h2>{t("services")}</h2>
         <div>
           {services.map((service) => (
             <div className="service" key={service.id}>
@@ -94,5 +97,3 @@ function services() {
     </>
   );
 }
-
-export default services;

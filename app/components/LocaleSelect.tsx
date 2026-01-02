@@ -9,6 +9,7 @@ export const LocaleSelect = () => {
 
   return (
     <select
+      className="locale-select"
       value={locale}
       onChange={(e) => changeLocale(e.target.value as "fr" | "en")}
     >

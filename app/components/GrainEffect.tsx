@@ -19,12 +19,12 @@ export default function GrainEffect() {
       if (typeof window.grained !== "undefined") {
         const options = {
           animate: true,
-          patternWidth: 100,
-          patternHeight: 100,
+          patternWidth: 80,
+          patternHeight: 80,
           grainOpacity: 0.2,
-          grainDensity: 1.8,
-          grainWidth: 1,
-          grainHeight: 1,
+          grainDensity: 1,
+          grainWidth: 0.7,
+          grainHeight: 0.7,
         };
         window.grained("#grain", options);
       }

@@ -1,7 +1,9 @@
-import { getI18n } from "@/locales/server";
+"use client";
+
+import { useI18n } from "@/locales/client";
 import Link from "next/link";
 
-export default async function Services() {
+export default function Services() {
   const services = [
     {
       id: 1,
@@ -24,7 +26,6 @@ export default async function Services() {
       project: {
         title: "Agrimap",
         slug: "agrimap",
-
         img: "/img/Projets/developpement.png",
         description:
           "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci expedita perspiciatis pariatur.",
@@ -58,7 +59,7 @@ export default async function Services() {
     },
   ];
 
-  const t = await getI18n();
+  const t = useI18n();
 
   return (
     <>

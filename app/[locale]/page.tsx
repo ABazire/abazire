@@ -1,11 +1,13 @@
+"use client";
+
 import Tools from "@/app/components/tools";
 import Services from "@/app/components/services";
 import Menu from "@/app/components/menu";
 import Footer from "@/app/components/footer";
-import { getI18n } from "@/locales/server";
+import { useI18n } from "@/locales/client";
 
-export default async function Home() {
-  const t = await getI18n();
+export default function Home() {
+  const t = useI18n();
 
   return (
     <>

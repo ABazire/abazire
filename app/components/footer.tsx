@@ -1,16 +1,18 @@
+"use client";
+
 import { GraduationCap, Briefcase, MapPin } from "lucide-react";
 import Logo from "../../public/img/Logo blanc.png";
 import Image from "next/image";
-import { getScopedI18n } from "@/locales/server";
+import { useScopedI18n } from "@/locales/client";
 
-export default async function Footer({
+export default function Footer({
   variant = "simple",
 }: {
   variant?: "simple" | "detailed";
 }) {
-  const footert = await getScopedI18n("footer");
-  const experiencet = await getScopedI18n("footer.experience");
-  const formationt = await getScopedI18n("footer.formation");
+  const footert = useScopedI18n("footer");
+  const experiencet = useScopedI18n("footer.experience");
+  const formationt = useScopedI18n("footer.formation");
 
   return (
     <>
@@ -70,7 +72,6 @@ export default async function Footer({
                 </div>
                 <div className="resume-section">
                   <div>
-                    {" "}
                     <Briefcase className="icons" />
                   </div>
                   <div>
@@ -80,7 +81,6 @@ export default async function Footer({
                 </div>
                 <div className="resume-section">
                   <div>
-                    {" "}
                     <GraduationCap className="icons" />
                   </div>
                   <div>

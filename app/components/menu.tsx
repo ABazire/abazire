@@ -1,3 +1,5 @@
+"use client";
+
 import Logo from "../../public/img/Logo.png";
 import { LocaleSelect } from "./LocaleSelect";
 import { ThemeToggle } from "./theme-toggle";

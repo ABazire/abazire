@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import { GraduationCap, Briefcase, MapPin } from "lucide-react";
 import Logo from "../../public/img/Logo blanc.png";
 import Image from "next/image";

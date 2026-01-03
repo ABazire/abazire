@@ -1,5 +1,6 @@
+"use client";
+
 import { getI18n } from "@/locales/server";
-import { s } from "framer-motion/client";
 import Link from "next/link";
 
 export default async function Services() {

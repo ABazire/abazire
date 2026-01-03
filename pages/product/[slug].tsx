@@ -1,4 +1,4 @@
-import "../../app/globals.css";
+import "../../app/[locale]/globals.css";
 import Image from "next/image";
 import Menu from "@/app/components/menu";
 import GrainEffect from "@/app/components/GrainEffect";

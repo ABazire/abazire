@@ -6,6 +6,11 @@ export default {
   hello: "Hello",
   hero: "Developer & Designer",
   services: "services",
+  service: {
+    title: "Services",
+    viewProduct: "View product",
+    viewProject: "View project",
+  },
   footer: {
     aboutTitle: "About Me",
     about:

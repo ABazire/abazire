@@ -1,8 +1,15 @@
+import { title } from "process";
+
 // locales/fr.ts
 export default {
   hello: "Bonjour",
   hero: "Développeur web <span>front-end</span> <br />& ux/ui designer",
   services: "Services",
+  service: {
+    title: "Services",
+    viewProduct: "Voir le produit",
+    viewProject: "Voir le projet",
+  },
   footer: {
     aboutTitle: "A propos",
     about:

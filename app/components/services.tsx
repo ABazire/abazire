@@ -1,5 +1,3 @@
-"use client";
-
 import { getI18n } from "@/locales/server";
 import Link from "next/link";
 

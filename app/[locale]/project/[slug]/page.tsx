@@ -10,7 +10,6 @@ type Props = {
   params: Promise<{ slug: string; locale: string }>;
 };
 
-// Génération des métadonnées
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
   const project = projects.find((p) => p.slug === slug);
@@ -27,7 +26,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// Génération des routes statiques
 export async function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
@@ -38,7 +36,6 @@ export default async function ProjectPage({ params }: Props) {
   const { slug, locale } = await params;
   const project = projects.find((p) => p.slug === slug);
 
-  // Si le projet n'existe pas, afficher la page 404
   if (!project) {
     notFound();
   }

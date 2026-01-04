@@ -46,6 +46,7 @@ body {
   height: 100%;
   pointer-events: none;
   z-index: 9999;
+  opacity: 0.7;
 }
 
 header {
@@ -54,6 +55,7 @@ header {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 0 20px;
 }
 
 header div {
@@ -66,6 +68,8 @@ header h2 {
   font-weight: 800;
   font-size: 160px;
   font-family: "Inter", sans-serif;
+  line-height: 1;
+  margin: 0;
 }
 
 header h1,
@@ -73,6 +77,8 @@ header h1,
   font-size: 44px;
   font-weight: 600;
   color: var(--text);
+  line-height: 1.2;
+  margin: 20px 0;
 }
 
 header h1 span,
@@ -80,7 +86,8 @@ header h1 span,
   background-color: var(--primary);
   color: var(--background);
   padding: 5px 10px;
-  transform: rotate(-50deg);
+  transform: rotate(-2deg);
+  display: inline-block;
 }
 
 .menu {
@@ -89,6 +96,7 @@ header h1 span,
   display: flex;
   width: 80%;
   justify-content: space-between;
+  padding: 0 20px;
 }
 
 .menu div {
@@ -106,12 +114,19 @@ header h1 span,
   width: 100%;
   justify-content: center;
   gap: 15px;
+  margin-top: 30px;
 }
 
 .theme span {
   width: 30px;
   height: 10px;
   border-radius: 100%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.theme span:hover {
+  transform: scale(1.2);
 }
 
 .green {
@@ -132,14 +147,13 @@ header h1 span,
   overflow: hidden;
   background-color: var(--primary);
   padding-block: 50px;
+  width: 100%;
 }
 
 .carousel {
   display: flex;
   width: max-content;
-
   gap: 200px;
-
   animation: scroll 20s linear infinite;
   will-change: transform;
 }
@@ -149,6 +163,7 @@ header h1 span,
   height: 75px;
   flex-shrink: 0;
   filter: grayscale(1);
+  transition: filter 0.3s ease;
 }
 
 .carousel img:hover {
@@ -165,6 +180,10 @@ header h1 span,
 }
 
 /* Services Component */
+.container {
+  padding: 100px 20px;
+}
+
 .container h2 {
   font-size: 64px;
   font-weight: 900;
@@ -177,6 +196,7 @@ header h1 span,
   font-size: 70px;
   font-weight: 700;
   color: var(--primary);
+  line-height: 1;
 }
 
 .service h4 {
@@ -184,6 +204,7 @@ header h1 span,
   font-weight: 700;
   color: var(--primary);
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .service {
@@ -192,6 +213,11 @@ header h1 span,
   display: flex;
   align-items: center;
   gap: 25px;
+  position: relative;
+}
+
+.service > div:first-of-type {
+  flex: 1;
 }
 
 .service-project {
@@ -203,6 +229,8 @@ header h1 span,
   border-radius: 5px;
   display: none;
   padding: 25px;
+  z-index: 10;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .service:hover .service-project {
@@ -222,10 +250,6 @@ header h1 span,
   color: var(--background);
   line-height: 1.6;
   opacity: 0.6;
-}
-
-.service-project-desc {
-  width: auto;
 }
 
 .service-project span {
@@ -255,6 +279,11 @@ header h1 span,
   padding: 10px 0;
   border-radius: 20px;
   font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.service-project a:hover {
+  opacity: 0.8;
 }
 
 /* About */
@@ -455,25 +484,370 @@ footer p {
   font-weight: 500;
 }
 
-/* Version alternative avec fond sombre pour le mode dark */
-/* @media (prefers-color-scheme: dark) {
-  .locale-select {
-    color: #f5f3eb;
-    border-color: #f5f3eb;
-    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23f5f3eb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+/* Responsive Design */
+
+/* Tablettes et petits desktops (≤ 1200px) */
+@media (max-width: 1200px) {
+  .service-project {
+    width: 600px;
+    right: 10%;
+  }
+}
+
+/* Tablettes (≤ 1024px) */
+@media (max-width: 1024px) {
+  header h2 {
+    font-size: 120px;
   }
 
-  .locale-select:hover {
-    background-color: rgba(245, 243, 235, 0.1);
+  header h1 {
+    font-size: 36px;
   }
 
-  .locale-select:focus {
-    border-color: #f5f3eb;
-    box-shadow: 0 0 0 3px rgba(245, 243, 235, 0.1);
+  .menu div {
+    font-size: 16px;
+    gap: 15px;
   }
 
-  .locale-select option {
-    background-color: #1a4d3e;
-    color: #f5f3eb;
+  .tools-container {
+    padding-block: 40px;
   }
-} */
+
+  .carousel {
+    gap: 150px;
+  }
+
+  .carousel img {
+    width: 65px;
+    height: 65px;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 75px));
+    }
+  }
+
+  .container h2 {
+    font-size: 52px;
+    margin-bottom: 25px;
+  }
+
+  .service h3 {
+    font-size: 56px;
+  }
+
+  .service h4 {
+    font-size: 22px;
+  }
+
+  .service {
+    gap: 20px;
+    padding-block: 20px 40px;
+  }
+
+  .service-project {
+    width: 500px;
+    right: 5%;
+    padding: 20px;
+  }
+
+  .service-project h3 {
+    font-size: 24px !important;
+  }
+
+  .service-project div,
+  .service-project img {
+    height: 200px;
+  }
+}
+
+/* Tablettes portrait et petits écrans (≤ 768px) */
+@media (max-width: 768px) {
+  header {
+    padding: 0 15px;
+  }
+
+  header h2 {
+    font-size: 80px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  .menu {
+    width: 90%;
+    padding: 0 10px;
+    top: 20px;
+  }
+
+  .menu div {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .theme {
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .theme span {
+    width: 25px;
+    height: 8px;
+  }
+
+  .tools-container {
+    padding-block: 35px;
+  }
+
+  .carousel {
+    gap: 100px;
+    animation: scroll 25s linear infinite;
+  }
+
+  .carousel img {
+    width: 55px;
+    height: 55px;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 50px));
+    }
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .container h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .service {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-block: 20px 30px;
+  }
+
+  .service h3 {
+    font-size: 42px;
+  }
+
+  .service h4 {
+    font-size: 20px;
+  }
+
+  /* Désactiver le hover et afficher le projet en dessous sur tablette */
+  .service-project {
+    position: static;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin-top: 15px;
+    padding: 20px;
+  }
+
+  .service:hover .service-project {
+    display: flex;
+  }
+
+  .service-project div,
+  .service-project img {
+    height: 180px;
+  }
+}
+
+/* Mobiles (≤ 480px) */
+@media (max-width: 480px) {
+  header {
+    padding: 0 10px;
+  }
+
+  header h2 {
+    font-size: 48px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  header h1 span {
+    padding: 3px 8px;
+    font-size: 20px;
+  }
+
+  .menu {
+    width: 95%;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .menu div {
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .theme {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .theme span {
+    width: 20px;
+    height: 7px;
+  }
+
+  .tools-container {
+    padding-block: 30px;
+  }
+
+  .carousel {
+    gap: 60px;
+    animation: scroll 30s linear infinite;
+  }
+
+  .carousel img {
+    width: 45px;
+    height: 45px;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 30px));
+    }
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .container h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .service {
+    gap: 12px;
+    padding-block: 15px 25px;
+  }
+
+  .service h3 {
+    font-size: 32px;
+  }
+
+  .service h4 {
+    font-size: 18px;
+  }
+
+  .service > div:first-of-type p {
+    font-size: 14px;
+  }
+
+  .service-project {
+    padding: 15px;
+    gap: 8px;
+  }
+
+  .service-project p {
+    font-size: 14px;
+  }
+
+  .service-project span {
+    font-size: 13px;
+  }
+
+  .service-project div,
+  .service-project img {
+    height: 150px;
+  }
+
+  .service-project a {
+    width: 130px;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+}
+
+/* Très petits mobiles (≤ 360px) */
+@media (max-width: 360px) {
+  header h2 {
+    font-size: 40px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  header h1 span {
+    font-size: 18px;
+  }
+
+  .tools-container {
+    padding-block: 25px;
+  }
+
+  .carousel {
+    gap: 40px;
+    animation: scroll 35s linear infinite;
+  }
+
+  .carousel img {
+    width: 40px;
+    height: 40px;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 20px));
+    }
+  }
+
+  .container h2 {
+    font-size: 28px;
+  }
+
+  .service h3 {
+    font-size: 28px;
+  }
+
+  .service h4 {
+    font-size: 16px;
+  }
+
+  .service-project {
+    padding: 12px;
+  }
+
+  .service-project p,
+  .service-project span {
+    font-size: 13px;
+  }
+
+  .service-project div,
+  .service-project img {
+    height: 120px;
+  }
+
+  .service-project a {
+    width: 120px;
+    font-size: 13px;
+  }
+}

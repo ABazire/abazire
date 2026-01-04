@@ -1,5 +1,3 @@
-import { title } from "process";
-
 // locales/fr.ts
 export default {
   hello: "Bonjour",

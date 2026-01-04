@@ -22,7 +22,6 @@ export default function Services() {
               <div>
                 <h4>{service.title[locale]}</h4>
                 <p>{service.description[locale]}</p>
-                <Link href="/product">{serviceT("viewProduct")}</Link>
               </div>
               {project && (
                 <div className="service-project">
@@ -34,7 +33,7 @@ export default function Services() {
                   </span>
                   <h3>{project.title}</h3>
                   <p>{project.description[locale]}</p>
-                  <Link href={`/product/${project.slug}`}>
+                  <Link href={`/${locale}/project/${project.slug}`}>
                     {serviceT("viewProject")}
                   </Link>
                 </div>

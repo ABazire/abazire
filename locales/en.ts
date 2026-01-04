@@ -1,6 +1,3 @@
-import { button } from "framer-motion/client";
-import { Copyright } from "lucide-react";
-
 // locales/en.ts
 export default {
   hello: "Hello",

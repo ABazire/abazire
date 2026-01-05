@@ -2,6 +2,7 @@
 
 import { I18nProviderClient } from "@/locales/client";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { ColorThemeProvider } from "@/app/context/ColorThemeContext";
 import { PropsWithChildren } from "react";
 
 export const Providers = (props: PropsWithChildren<{ locale: string }>) => {
@@ -13,7 +14,9 @@ export const Providers = (props: PropsWithChildren<{ locale: string }>) => {
         enableSystem
         disableTransitionOnChange
       >
-        {props.children}
+        <ColorThemeProvider>
+          {props.children}
+        </ColorThemeProvider>
       </NextThemesProvider>
     </I18nProviderClient>
   );

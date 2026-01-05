@@ -129,6 +129,11 @@ header h1 span,
   transform: scale(1.2);
 }
 
+.theme span.active {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px currentColor;
+}
+
 .green {
   background-color: #0e4839;
 }
@@ -168,6 +173,10 @@ header h1 span,
 
 .carousel img:hover {
   filter: grayscale(0);
+}
+
+.tools-container:hover .carousel {
+  animation-play-state: paused;
 }
 
 @keyframes scroll {
@@ -214,6 +223,12 @@ header h1 span,
   align-items: center;
   gap: 25px;
   position: relative;
+  perspective: 1000px;
+  z-index: 1;
+}
+
+.service:hover {
+  z-index: 100;
 }
 
 .service > div:first-of-type {
@@ -231,6 +246,8 @@ header h1 span,
   padding: 25px;
   z-index: 10;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease-out;
+  transform-style: preserve-3d;
 }
 
 .service:hover .service-project {

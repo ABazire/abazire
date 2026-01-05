@@ -14,15 +14,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <button
-        style={{
-          padding: "0.5rem",
-          borderRadius: "0.5rem",
-          border: "1px solid var(--foreground)",
-          backgroundColor: "transparent",
-          cursor: "pointer",
-        }}
-      >
+      <button style={{}}>
         <div style={{ width: "20px", height: "20px" }} />
       </button>
     );
@@ -31,23 +23,16 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      style={{
-        padding: "0.5rem",
-        borderRadius: "0.5rem",
-        border: "1px solid var(--foreground)",
-        backgroundColor: "transparent",
-        cursor: "pointer",
-        transition: "all 0.3s ease",
-      }}
+      className="theme-toggle"
       aria-label="Changer de thème"
-      onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = "var(--foreground)";
-        e.currentTarget.style.opacity = "0.1";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = "transparent";
-        e.currentTarget.style.opacity = "1";
-      }}
+      // onMouseEnter={(e) => {
+      //   e.currentTarget.style.backgroundColor = "var(--primary)";
+      //   e.currentTarget.style.opacity = "0.1";
+      // }}
+      // onMouseLeave={(e) => {
+      //   e.currentTarget.style.backgroundColor = "transparent";
+      //   e.currentTarget.style.opacity = "1";
+      // }}
     >
       {theme === "dark" ? (
         // Icône soleil (mode clair)
@@ -56,7 +41,6 @@ export function ThemeToggle() {
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
-          stroke="currentColor"
           style={{ width: "20px", height: "20px" }}
         >
           <path
@@ -72,7 +56,6 @@ export function ThemeToggle() {
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
-          stroke="currentColor"
           style={{ width: "20px", height: "20px" }}
         >
           <path

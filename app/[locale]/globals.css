@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #fdfce7;
   --foreground: #171717;
@@ -30,6 +34,34 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+/* Grid background effect - full page */
+body::before {
+  content: "";
+  position: fixed;
+  top: -80px;
+  left: -80px;
+  right: -80px;
+  bottom: -80px;
+  background-image:
+    linear-gradient(var(--primary) 1px, transparent 1px),
+    linear-gradient(90deg, var(--primary) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(80px, 80px);
+  }
 }
 
 .container {
@@ -56,20 +88,48 @@ header {
   justify-content: center;
   height: 100vh;
   padding: 0 20px;
+  position: relative;
 }
 
 header div {
   text-align: center;
   text-transform: uppercase;
+  position: relative;
+  z-index: 1;
 }
 
 header h2 {
-  color: var(--primary);
   font-weight: 800;
   font-size: 160px;
   font-family: "Inter", sans-serif;
   line-height: 1;
   margin: 0;
+  /* Gradient animé */
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    color-mix(in srgb, var(--primary) 60%, var(--text)) 25%,
+    var(--primary) 50%,
+    color-mix(in srgb, var(--primary) 60%, var(--text)) 75%,
+    var(--primary) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeSlideUp 0.8s ease-out forwards, gradientShift 4s ease-in-out infinite;
+  /* Animation d'entrée */
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
 }
 
 header h1,
@@ -81,6 +141,21 @@ header h1,
   margin: 20px 0;
 }
 
+header h1 {
+  /* Animation d'entrée avec délai */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease-out 0.2s forwards;
+}
+
+/* Animation fade-in + slide-up */
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 header h1 span,
 .project h1 span {
   background-color: var(--primary);
@@ -88,6 +163,12 @@ header h1 span,
   padding: 5px 10px;
   transform: rotate(-2deg);
   display: inline-block;
+}
+
+header h1 span:hover,
+.project h1 span:hover {
+  transform: rotate(0);
+  transition: transform 0.3s;
 }
 
 .menu {
@@ -112,6 +193,10 @@ header h1 span,
   position: relative;
   display: flex;
   width: 100%;
+  /* Animation d'entrée */
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeSlideUp 0.8s ease-out 0.4s forwards;
   justify-content: center;
   gap: 15px;
   margin-top: 30px;
@@ -243,6 +328,42 @@ header h1 span,
   position: relative;
   perspective: 1000px;
   z-index: 1;
+  /* Animation au scroll */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: serviceAppear 0.6s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.service.in-view {
+  animation-play-state: running;
+}
+
+/* Staggered animation delay for each service */
+.service:nth-child(1) {
+  animation-delay: 0s;
+}
+.service:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.service:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.service:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.service:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.service:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+@keyframes serviceAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .service:hover {

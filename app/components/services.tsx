@@ -4,7 +4,7 @@ import { useCurrentLocale, useScopedI18n } from "@/locales/client";
 import Link from "next/link";
 import { services } from "@/data/services";
 import { getLatestProjectForCategory } from "../../lib/utils/getProjectForService";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Services() {
   const serviceT = useScopedI18n("service");
@@ -13,6 +13,30 @@ export default function Services() {
     [key: string]: { rotateX: number; rotateY: number };
   }>({});
   const serviceRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const [inViewServices, setInViewServices] = useState<Set<string>>(new Set());
+
+  // Intersection Observer pour l'animation au scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const serviceId = entry.target.getAttribute("data-service-id");
+            if (serviceId) {
+              setInViewServices((prev) => new Set(prev).add(serviceId));
+            }
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    Object.values(serviceRefs.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleMouseMove = (
     e: React.MouseEvent<HTMLDivElement>,
@@ -53,8 +77,9 @@ export default function Services() {
 
           return (
             <div
-              className="service"
+              className={`service ${inViewServices.has(String(service.id)) ? "in-view" : ""}`}
               key={service.id}
+              data-service-id={service.id}
               ref={(el) => {
                 serviceRefs.current[service.id] = el;
               }}

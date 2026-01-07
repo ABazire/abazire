@@ -531,19 +531,22 @@ footer p {
   line-height: 1.6;
 }
 
-.resume button {
+.resume a {
   width: 200px;
   padding: 10px 0;
   border-radius: 10px;
   border: none;
   background-color: var(--background);
+  text-align: center;
+  text-decoration: none;
   color: var(--primary);
   font-weight: 600;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  display: inline-block;
 }
 
-.resume button:hover {
+.resume a:hover {
   opacity: 0.9;
 }
 

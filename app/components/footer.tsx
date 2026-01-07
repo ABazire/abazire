@@ -88,7 +88,7 @@ export default function Footer({
                     <p>{formationt("description")}</p>
                   </div>
                 </div>
-                <a href="../../public/cv.pdf" download>
+                <a href="/cv.pdf" download>
                   {footert("button")}
                 </a>
               </div>

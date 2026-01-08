@@ -45,8 +45,7 @@ body::before {
   left: -80px;
   right: -80px;
   bottom: -80px;
-  background-image:
-    linear-gradient(var(--primary) 1px, transparent 1px),
+  background-image: linear-gradient(var(--primary) 1px, transparent 1px),
     linear-gradient(90deg, var(--primary) 1px, transparent 1px);
   background-size: 80px 80px;
   opacity: 0.05;
@@ -117,14 +116,16 @@ header h2 {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: fadeSlideUp 0.8s ease-out forwards, gradientShift 4s ease-in-out infinite;
+  animation: fadeSlideUp 0.8s ease-out forwards,
+    gradientShift 4s ease-in-out infinite;
   /* Animation d'entrée */
   opacity: 0;
   transform: translateY(30px);
 }
 
 @keyframes gradientShift {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% center;
   }
   50% {
@@ -174,10 +175,13 @@ header h1 span:hover,
 .menu {
   position: absolute;
   top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   width: 80%;
   justify-content: space-between;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .menu div {
@@ -1009,7 +1013,8 @@ footer p {
   }
 
   .menu {
-    width: 95%;
+    width: 100%;
+    padding: 0 15px;
     flex-direction: column;
     gap: 15px;
     align-items: center;
@@ -1184,9 +1189,9 @@ footer p {
     padding: 15px 0;
   }
   .project {
-    top: 20px;
+    top: 100px;
     padding: 0 10px;
-    margin-bottom: 25px;
+    margin-bottom: 75px;
   }
 
   .project h1 {

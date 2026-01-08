@@ -23,7 +23,7 @@ const colorThemes = {
       background: "#fdfce7",
       foreground: "#171717",
       text: "#07221c",
-      logo: "/img/logo/logo-green-light.png",
+      logo: "/img/logo/logo.png",
     },
     dark: {
       primary: "#dcd6c0",

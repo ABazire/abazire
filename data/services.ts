@@ -19,8 +19,8 @@ export const services: Service[] = [
       en: "Web Development",
     },
     description: {
-      fr: "Création de sites web responsives et performants en utilisant les dernières technologies front-end telles que React, Next.js et Tailwind CSS.",
-      en: "Creation of responsive and high-performance websites using the latest front-end technologies such as React, Next.js, and Tailwind CSS.",
+      fr: "Création de sites web responsives en utilisant des technologies front-end telles que React, Next.js, GSAP et Tailwind CSS.",
+      en: "Creation of responsive websites using technologies such as React, Next.js, GSAP and Tailwind CSS.",
     },
     category: "Développement web",
   },
@@ -31,8 +31,8 @@ export const services: Service[] = [
       en: "UI/UX Design",
     },
     description: {
-      fr: "Création de maquettes et prototypes pour des applications web et mobiles, en mettant l'accent sur l'expérience utilisateur et l'interface utilisateur.",
-      en: "Creation of mockups and prototypes for web and mobile applications, focusing on user experience and user interface.",
+      fr: "Création de maquettes pour des sites et applications web et mobiles, responsives, suivant les normes d'UX/UI design. Utilisation de l'outil figma pour la conception des maquettes.",
+      en: "Creation of mockups for responsive web and mobile sites and applications, following UX/UI design standards. Use of the Figma tool for mockup design.",
     },
     category: "Design UI/UX",
   },
@@ -43,8 +43,8 @@ export const services: Service[] = [
       en: "Graphic Design",
     },
     description: {
-      fr: "Conception de visuels attrayants pour le web et les réseaux sociaux, y compris des bannières, des logos et des illustrations personnalisées.",
-      en: "Design of attractive visuals for the web and social media, including banners, logos, and custom illustrations.",
+      fr: "Conception de visuels affiches, flyers, roll-up, logo ou encore de visuels pour les réseaux sociaux. Utilisation des outils Adobe Photoshop, Illustrator et Figma.",
+      en: "Design of visuals such as posters, flyers, roll-ups, logos, and social media visuals. Use of Adobe Photoshop, Illustrator, and Figma tools.",
     },
     category: "Graphisme",
   },
@@ -55,8 +55,8 @@ export const services: Service[] = [
       en: "3D",
     },
     description: {
-      fr: "Modélisation et rendu 3D pour des projets variés, allant de la visualisation de produits à la création d'environnements virtuels.",
-      en: "3D modeling and rendering for various projects, ranging from product visualization to the creation of virtual environments.",
+      fr: "Modélisation pour des projets variés, de la création d'objets à la création d'environnements.",
+      en: "Modeling for various projects, from object creation to environment creation.",
     },
     category: "3D",
   },

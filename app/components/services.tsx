@@ -28,7 +28,7 @@ export default function Services() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     Object.values(serviceRefs.current).forEach((el) => {
@@ -40,7 +40,7 @@ export default function Services() {
 
   const handleMouseMove = (
     e: React.MouseEvent<HTMLDivElement>,
-    serviceId: string
+    serviceId: string,
   ) => {
     const element = serviceRefs.current[serviceId];
     if (!element) return;
@@ -105,7 +105,7 @@ export default function Services() {
                     {service.id} | {service.title[locale]}
                   </span>
                   <h3>{project.title}</h3>
-                  <p>{project.description[locale]}</p>
+                  <p>{project.abstract[locale]}</p>
                   <Link href={`/${locale}/project/${project.slug}`}>
                     {serviceT("viewProject")}
                   </Link>

@@ -48,16 +48,16 @@ export const services: Service[] = [
     },
     category: "Graphisme",
   },
-  {
-    id: 4,
-    title: {
-      fr: "3D",
-      en: "3D",
-    },
-    description: {
-      fr: "Modélisation pour des projets variés, de la création d'objets à la création d'environnements.",
-      en: "Modeling for various projects, from object creation to environment creation.",
-    },
-    category: "3D",
-  },
+  // {
+  //   id: 4,
+  //   title: {
+  //     fr: "3D",
+  //     en: "3D",
+  //   },
+  //   description: {
+  //     fr: "Modélisation pour des projets variés, de la création d'objets à la création d'environnements.",
+  //     en: "Modeling for various projects, from object creation to environment creation.",
+  //   },
+  //   category: "3D",
+  // },
 ];

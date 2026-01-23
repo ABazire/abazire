@@ -51,23 +51,23 @@ export const projects: Project[] = [
     technologies: ["Figma", "Html", "Css", "Javascript", "Symfony"],
     img: "/img/Projets/developpement.png",
   },
-  {
-    id: 3,
-    title: "Modélisation 3D",
-    slug: "3d",
-    category: ["3D"],
-    year: 2022,
-    description: {
-      fr: "Projet de modélisation 3D réalisé lors d'un projet académique. Modélisation d'appartements et d'objets divers. Modélisation de plusieurs environnements 3d lors de la création d'un jeu vidéo de plateforme, environnements qui servaient de décors au jeu : forêt, pont, île flottante, cascade, etc. Pour réaliser ces modèles 3d j'ai utilisé le logiciel Blender, les scenes été ensuite importées sur Visual Studio pour y ajouter les fonctionnalités du jeu.",
-      en: "3D modeling project carried out during an academic project. Modeling of apartments and various objects. Modeling of several 3D environments during the creation of a platform video game, environments that served as the game's scenery: forest, bridge, floating island, waterfall, etc. To create these 3D models, I used the Blender software, and the scenes were then imported into Visual Studio to add the game's functionalities.",
-    },
-    abstract: {
-      fr: "Projet de modélisation 3D d'appartements et création d'environnements pour un jeu de plateforme.",
-      en: "3D modeling project of apartments and creation of environments for a platform game.",
-    },
-    technologies: ["Blender"],
-    img: "/img/Projets/3D.png",
-  },
+  // {
+  //   id: 3,
+  //   title: "Modélisation 3D",
+  //   slug: "3d",
+  //   category: ["3D"],
+  //   year: 2022,
+  //   description: {
+  //     fr: "Projet de modélisation 3D réalisé lors d'un projet académique. Modélisation d'appartements et d'objets divers. Modélisation de plusieurs environnements 3d lors de la création d'un jeu vidéo de plateforme, environnements qui servaient de décors au jeu : forêt, pont, île flottante, cascade, etc. Pour réaliser ces modèles 3d j'ai utilisé le logiciel Blender, les scenes été ensuite importées sur Visual Studio pour y ajouter les fonctionnalités du jeu.",
+  //     en: "3D modeling project carried out during an academic project. Modeling of apartments and various objects. Modeling of several 3D environments during the creation of a platform video game, environments that served as the game's scenery: forest, bridge, floating island, waterfall, etc. To create these 3D models, I used the Blender software, and the scenes were then imported into Visual Studio to add the game's functionalities.",
+  //   },
+  //   abstract: {
+  //     fr: "Projet de modélisation 3D d'appartements et création d'environnements pour un jeu de plateforme.",
+  //     en: "3D modeling project of apartments and creation of environments for a platform game.",
+  //   },
+  //   technologies: ["Blender"],
+  //   img: "/img/Projets/3D.png",
+  // },
   {
     id: 4,
     title: "Portfolio",
@@ -84,5 +84,22 @@ export const projects: Project[] = [
     },
     technologies: ["React", "Next.js", "Typescript", "Vercel", "Figma"],
     img: "/img/Projets/portfolio.png",
+  },
+  {
+    id: 5,
+    title: "Affiche Karmine Corp",
+    slug: "affiche-karmine-corp",
+    category: ["Graphisme"],
+    year: 2026,
+    description: {
+      fr: "Projet personnel de création d'affiches pour les journées de matchs de l'équipe d'esport Karmine corp. Création de plusieurs visuels d'affiches, une affiche par équipe participante aux LEC versus tour. Affiche réalisée sur figma, l'objectif était de créer un visuel dynamique suivant les codes graphiques de la Karmine corp et en mettant les joueurs des équipes en avant. 2 teintes ont été utilisées pour différencier les affiches afin qu'elles gardent une cohérence et un visuel reconnaissable mais légerement différent par la couleur et les filtres appliqués : une teinte rouge qui représente les matchs de l'équipe premiere de la karmine corp et une bleue qui représente les matchs de l'équipe seconde.",
+      en: "Personal project creating posters for match days of the esports team Karmine Corp. Creation of several poster visuals, one poster per team participating in the LEC versus tour. Poster created on Figma, the objective was to create a dynamic visual following the graphic codes of Karmine Corp and highlighting the players of the teams. Two shades were used to differentiate the posters so that they maintain coherence and a recognizable visual but slightly different by color and applied filters: a red shade representing the matches of Karmine Corp's first team and a blue one representing the matches of the second team.",
+    },
+    abstract: {
+      fr: "Projet de création d'affiches pour l'annonce de matchs de l'équipe d'esport Karmine Corp.",
+      en: "Project to create posters for announcing matches of the esports team Karmine Corp.",
+    },
+    technologies: ["Figma"],
+    img: "/img/Projets/affiche.png",
   },
 ];
